@@ -5,7 +5,7 @@ from typing import List, Tuple, Dict
 
 import torch
 from sklearn.metrics import precision_recall_fscore_support as prfs
-from transformers import RoBertaTokenizer
+from transformers import RobertaTokenizer
 
 from Engine import util
 from Engine.terms import Document, Dataset, TermType
@@ -16,7 +16,7 @@ SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 
 class Evaluator:
-    def __init__(self, dataset: Dataset, input_reader: JsonInputReader, text_encoder: RoBertaTokenizer,
+    def __init__(self, dataset: Dataset, input_reader: JsonInputReader, text_encoder: RobertaTokenizer,
                  rel_filter_threshold: float, no_overlapping: bool,
                  predictions_path: str, examples_path: str, example_count: int, epoch: int, dataset_label: str):
         self._text_encoder = text_encoder
